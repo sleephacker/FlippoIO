@@ -29,7 +29,7 @@ Specifies the time limit for players. Set to `5000` by default.
 
 ## `ReadTimeMargin (int)`
 
-Specifies the extra time margin that is used to wait for a player timeout. Note that this doesn’t give players more time, but exists to prevent the thread waiting for a timeout to become active too soon which could interfere with the availability of the CPU during a player’s turn. Set to `200` by default.
+Specifies the extra time margin that is used to wait for a player timeout. Note that this doesn’t give players more time, but exists to prevent the thread waiting for a timeout from becoming active too soon which could interfere with the availability of the CPU during a player’s turn. Set to `200` by default.
 
 ## `MilliSecondsBeforeKill (int)`
 
