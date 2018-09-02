@@ -13,6 +13,8 @@ If no command-line arguments are passed to FlippoIO, the program will try to ope
 FlippoIO my script.txt
 ```
 
+Note that filenames that contain spaces don't have to be enclosed in double quotes because FlippIO only takes one argument.
+
 ## Viewing Matches and Player Logs
 FlippoIO saves all logs to a per match folder that has the same name as the corresponding match. E.g. the player logs and match log of `Match #1` will be saved in the folder `logs\Match #1`. In each folder there will be a file called `match.txt` in which the match can be viewed. Depending on whether each player wrote to Standard Error, the files `white.txt` and `black.txt` can also be found in each folder and contain the Standard Error output of the white and black player during that match.
 
