@@ -41,11 +41,19 @@ Specifies the number of matches to execute concurrently. Set to `Environment.Pro
 
 ## `JavaCmd (String)`
 
-Can be used to specify a replacement for the java command. Files with the .jar extension are started using the following command: <JavaCmd> -jar path\to\file.jar. Set to `java` by default.
+Can be used to specify a replacement for the java command. Files with the .jar extension are started using the following command:
+```
+<JavaCmd> -jar path\to\file.jar
+```
+Set to `java` by default.
 
 ## `PythonCmd (String)`
 
-Can be used to specify a replacement for the py command. Files with the .py extension are started using the following command: `PythonCmd path\to\file.py`. Set to `py` by default.
+Can be used to specify a replacement for the py command. Files with the .py extension are started using the following command:
+```
+PythonCmd path\to\file.py
+```
+Set to `py` by default.
 
 ## `WhiteChar (char)`
 
