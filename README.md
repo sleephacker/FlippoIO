@@ -9,6 +9,6 @@ Some of its features include:
 * No more need for Cygwin and the annoyances that can come with its installation.
 * All in one executable: FlippoIO comes as a single executable that requires no installation.
 
-FlippoIO is available on GitHub at: https://github.com/sleephacker/FlippoIO/blob/master/FlippoIO.exe
-A manual and usage examples can be found here: https://github.com/sleephacker/FlippoIO/blob/master/manual/Manual.md
+FlippoIO is available on GitHub at: https://github.com/sleephacker/FlippoIO/blob/master/FlippoIO.exe.
+A manual and usage examples can be found here: https://github.com/sleephacker/FlippoIO/blob/master/manual/Manual.md.
 If you have a question that isn’t answered by the manual, or if you have found a bug, feel free to contact me via the codecup forum or GitHub.
