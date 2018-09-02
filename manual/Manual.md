@@ -2,7 +2,9 @@
 ## Executing Commands
 FlippoIO operates by reading commands to execute from one or more files. These commands can be used to register players, to change settings, or to start matches between players. The syntax of these commands should be familiar to anyone: each command is followed by a space-separated list of arguments. To accommodate filenames that include spaces, arguments that are enclosed in double quotes (`"`) are interpreted as a single argument. A typical command will look something like this:
 
-`command argument1 “argument with spaces” argument3`
+```
+command argument1 “argument with spaces” argument3
+```
 
 For a complete list of commands see: https://github.com/sleephacker/FlippoIO/blob/master/manual/Commands.md.
 If no command-line arguments are passed to FlippoIO, the program will try to open and execute a file called `default.txt`. A different file can be specified in the first command-line argument to FlippoIO, like this:
