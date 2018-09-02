@@ -37,7 +37,7 @@ Specifies the waiting period between sending `Quit` and killing a player process
 
 ## `ThreadCount (int)`
 
-Specifies the time limit for players. Set to `Environment.ProcessorCount`  by default.
+Specifies the number of matches to execute concurrently. Set to `Environment.ProcessorCount` by default.
 
 ## `JavaCmd (String)`
 
