@@ -35,7 +35,7 @@ namespace FlippoIO
 		public static readonly RepCommand[] repList = new RepCommand[]
 		{
 			new RepCommand { keyword = "match", function = CmdMatch },
-			new RepCommand { keyword = "dual", function = CmdDual },
+			new RepCommand { keyword = "duel", function = CmdDuel },
 			new RepCommand { keyword = "competition", function = CmdCompetition },
 		};
 
@@ -206,7 +206,7 @@ namespace FlippoIO
 				Scheduler.ScheduleMatch(new Match(PlayerList.GetPlayer(args[0]), PlayerList.GetPlayer(args[1])));
 		}
 
-		public static void CmdDual(String[] args, int num)
+		public static void CmdDuel(String[] args, int num)
 		{
 			if(args.Length != 2) throw new Exception("Wrong number of arguments. A match requires two players.");
 			for(int n = 0; n < num; n++)
