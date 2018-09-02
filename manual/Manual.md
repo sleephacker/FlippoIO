@@ -2,7 +2,7 @@
 ## Executing Commands
 FlippoIO operates by reading commands to execute from one or more files. These commands can be used to register players, to change settings, or to start matches between players. The syntax of these commands should be familiar to anyone: each command is followed by a space-separated list of arguments. To accommodate filenames that include spaces, arguments that are enclosed in double quotes (`"`) are interpreted as a single argument. A typical command will look something like this:
 
-command argument1 “argument with spaces” argument3
+`command argument1 “argument with spaces” argument3`
 
 For a complete list of commands see <INSERT LINK TO COMMAND LIST HERE>.
 If no command-line arguments are passed to FlippoIO, the program will try to open and execute a file called `default.txt`. A different file can be specified in the first command-line argument to FlippoIO, like this:
@@ -15,6 +15,6 @@ FlippoIO saves all logs to a per match folder that has the same name as the corr
 ## Running Java and Python Players
 If your Java and Python have been installed properly, no additional effort is required to run Java or Python players. Files with the .jar extension will by default be run using the following command: `java -jar path\to\your\player.jar`. For files with the `.py` extension, the following command is used by default: `py path\to\your\player.py`.
 
-This default behaviour can be modified to accommodate faulty installations using the `set JavaCmd` and `set PythonCmd` commands. For more information on this, see <INSERT LINK TO SETTINGS LIST HERE>.
+This default behaviour can be modified to accommodate faulty installations using the `set JavaCmd` and `set PythonCmd` commands. For more information on this, see https://github.com/sleephacker/FlippoIO/blob/master/manual/Settings.md.
 
 Languages that do not produce `.exe` files, other than Java and Python, are not supported at this time.
