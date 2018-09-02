@@ -10,7 +10,7 @@ If no command-line arguments are passed to FlippoIO, the program will try to ope
 `FlippoIO my script.txt`
 
 ## Viewing Matches and Player Logs
-FlippoIO saves all logs to a per match folder that has the same name as the corresponding match. E.g. the player logs and match log of Match #1 will be saved in the folder logs\Match #1. In each folder there will be a file called match.txt in which the match can be viewed. Depending on whether each player wrote to Standard Error, the files `white.txt` and `black.txt` can also be found in each folder and contain the Standard Error output of the white and black player during that match.
+FlippoIO saves all logs to a per match folder that has the same name as the corresponding match. E.g. the player logs and match log of `Match #1` will be saved in the folder `logs\Match #1`. In each folder there will be a file called `match.txt` in which the match can be viewed. Depending on whether each player wrote to Standard Error, the files `white.txt` and `black.txt` can also be found in each folder and contain the Standard Error output of the white and black player during that match.
 
 ## Running Java and Python Players
 If your Java and Python have been installed properly, no additional effort is required to run Java or Python players. Files with the .jar extension will by default be run using the following command: `java -jar path\to\your\player.jar`. For files with the `.py` extension, the following command is used by default: `py path\to\your\player.py`.
