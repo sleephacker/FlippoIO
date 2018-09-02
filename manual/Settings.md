@@ -51,7 +51,7 @@ Set to `java` by default.
 
 Can be used to specify a replacement for the py command. Files with the .py extension are started using the following command:
 ```
-PythonCmd path\to\file.py
+<PythonCmd> path\to\file.py
 ```
 Set to `py` by default.
 
