@@ -7,7 +7,9 @@ FlippoIO operates by reading commands to execute from one or more files. These c
 For a complete list of commands see: https://github.com/sleephacker/FlippoIO/blob/master/manual/Commands.md.
 If no command-line arguments are passed to FlippoIO, the program will try to open and execute a file called `default.txt`. A different file can be specified in the first command-line argument to FlippoIO, like this:
 
-`FlippoIO my script.txt`
+```
+FlippoIO my script.txt
+```
 
 ## Viewing Matches and Player Logs
 FlippoIO saves all logs to a per match folder that has the same name as the corresponding match. E.g. the player logs and match log of `Match #1` will be saved in the folder `logs\Match #1`. In each folder there will be a file called `match.txt` in which the match can be viewed. Depending on whether each player wrote to Standard Error, the files `white.txt` and `black.txt` can also be found in each folder and contain the Standard Error output of the white and black player during that match.
