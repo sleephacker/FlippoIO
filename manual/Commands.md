@@ -39,7 +39,7 @@ This command can be used to schedule a match between two players, and takes the 
 
 Example usage:
 ```
-match playerA playerB`
+match playerA playerB
 ```
 
 ## `duel`
