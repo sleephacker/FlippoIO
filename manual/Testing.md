@@ -3,7 +3,7 @@
 
 ## Creating a Test Script
 
-In the same folder where your copy of `FlippoIO.exe` is located, create a file called `test.txt`, along with a file called `default.txt`. You’re going to put your testing script in `test.txt`, and use `default.txt` to ensure that `FlippoIO` runs your test-script by default.
+In the same folder where your copy of `FlippoIO.exe` is located, create a file called `test.txt`, along with a file called `default.txt`. You’re going to put your testing script in `test.txt`, and use `default.txt` to ensure that FlippoIO runs your test-script by default.
 
 In `default.txt`, simply add a single command:
 
