@@ -7,7 +7,7 @@ Some of its features include:
 * Highly configurable: settings such as how many threads to use, the time limit, how many matches to play in a competition, and many more are easily configurable.
 * Uses a command-based syntax instead of Caia's `competition.sh` and `manager.txt` files to give the user full control in a human readable manner.
 * No more need for Cygwin and the annoyances that can come with its installation.
-* All in one executable: FlippoIO comes as a single executable that requires no installation.
+* FlippoIO comes as a single executable that requires no installation.
 
 FlippoIO is available on GitHub at: https://github.com/sleephacker/FlippoIO/blob/master/FlippoIO.exe.
 A manual and usage examples can be found here: https://github.com/sleephacker/FlippoIO/blob/master/manual/Manual.md.
