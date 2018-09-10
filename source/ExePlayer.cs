@@ -156,7 +156,8 @@ namespace FlippoIO
 			String line = program.StandardOutput.ReadLine();
 			timer.Stop();
 			Sleep();
-			if(program.HasExited) throw new Crash();
+			bool potentialCrash = line == null ? true : line.Length == 0;
+			if(potentialCrash && program.HasExited) throw new Crash();
 			if(timer.ElapsedMilliseconds > Settings.TimeLimit) throw new Timeout();
 			return line;
 		}
@@ -180,7 +181,8 @@ namespace FlippoIO
 			Sleep();
 			outputDone.Reset();
 			AsyncThread.Return(thread, line != null);
-			if(program.HasExited) throw new Crash();
+			bool potentialCrash = line == null ? true : line.Length == 0;
+			if(potentialCrash && program.HasExited) throw new Crash();
 			if(timer.ElapsedMilliseconds > Settings.TimeLimit) throw new Timeout();
 			return line;
 		}

@@ -79,6 +79,7 @@ namespace FlippoIO
 					{
 						match.RunMatch();
 						match.SaveToTXT("logs\\" + match.name);
+						//match.SaveToFile("logs\\" + match.name);
 						match.white.AddScore(match.ScoreWhite);
 						match.black.AddScore(match.ScoreBlack);
 						lock(scheduleLock)
@@ -88,10 +89,7 @@ namespace FlippoIO
 					else
 						matchesAvailable.WaitOne();
 				}
-				catch(ThreadAbortException e)
-				{
-					break;
-				}
+				catch(ThreadAbortException e) { break; }
 				catch(Exception e)
 				{
 					Debug.WriteLine("Exception occured in scheduler thread:");

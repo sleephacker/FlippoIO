@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace FlippoIO
 {
@@ -63,7 +64,7 @@ namespace FlippoIO
 					file.WriteLine();
 
 					file.WriteLine("Starting Board:");
-					foreach(String l in Misc.BoardToString(boards[0])) file.WriteLine(l);
+					file.WriteLine(boards[0]);
 
 					for(int t = 0; t < 60; t++)
 					{
@@ -83,7 +84,7 @@ namespace FlippoIO
 						Move move = moves[t];
 						file.WriteLine((move.white ? "White" : "Black") + " played: " + move);
 						file.WriteLine("Board after turn " + (t + 1) + ":");
-						foreach(String l in Misc.BoardToString(boards[t + 1])) file.WriteLine(l);
+						file.WriteLine(boards[t + 1]);
 					}
 
 					int scoreWhite = whiteDisqualification.disqualified ? 0 : boards[60].CountColor(true) - 2;
@@ -104,6 +105,61 @@ namespace FlippoIO
 				Debug.WriteLine(e.StackTrace, true);
 			}
 			Debug.WriteLine(Prefix + "Saved match in text format to file: " + path);
+		}
+
+		public void SaveToFile(String path)
+		{
+			try
+			{
+				Directory.CreateDirectory(path);
+				String matchPath = path + "\\match";
+				File.Delete(matchPath);
+
+				// Write match log
+				using(StreamWriter file = new StreamWriter(File.OpenWrite(matchPath)))
+				{
+					file.WriteLine("Name:" + name);
+					file.WriteLine("White:" + white.GetName());
+					file.WriteLine("Black:" + black.GetName());
+					file.WriteLine();
+
+					if(whiteDisqualification.disqualified)
+					{
+						file.WriteLine("Disqualification:true," + whiteDisqualification.move + "," + (whiteDisqualification.reason.Count(c => c == '\n') + 1));
+						file.WriteLine(whiteDisqualification.reason);
+					}
+					if(blackDisqualification.disqualified)
+					{
+						file.WriteLine("Disqualification:false," + blackDisqualification.move + "," + (blackDisqualification.reason.Count(c => c == '\n') + 1));
+						file.WriteLine(blackDisqualification.reason);
+					}
+
+					file.WriteLine("Board:");
+					file.WriteLine(boards[0].ToStandardString());
+
+					for(int t = 0; t < 60; t++)
+					{
+						file.WriteLine();
+						Move move = moves[t];
+						file.WriteLine("Move:" + (move.white ? "true," : "false,") + move);
+						file.WriteLine("Board:");
+						file.WriteLine(boards[t + 1].ToStandardString());
+					}
+
+					int scoreWhite = whiteDisqualification.disqualified ? 0 : boards[60].CountColor(true) - 2;
+					int scoreBlack = blackDisqualification.disqualified ? 0 : boards[60].CountColor(false) - 2;
+					file.WriteLine();
+					file.WriteLine("Score:" + scoreWhite + "," + scoreBlack);
+					file.Close();
+				}
+			}
+			catch(Exception e)
+			{
+				Debug.WriteLine("An exception occured while attempting to save " + name + " to file: " + path, true);
+				Debug.WriteLine(e.Message, true);
+				Debug.WriteLine(e.StackTrace, true);
+			}
+			Debug.WriteLine(Prefix + "Saved match in parsable format to file: " + path);
 		}
 
 		public void RunMatch()
