@@ -1,0 +1,2 @@
+# Match Viewer
+This folder contains a program that can be used to view matches played using FlippoIO, as well as its source. To install, simply download `FlippoMatchViewer.exe` and place it in the same folder as `FlippoIO.exe`.

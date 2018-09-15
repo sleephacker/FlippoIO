@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 
 namespace FlippoIO
@@ -75,16 +76,21 @@ namespace FlippoIO
 						else
 							matchesAvailable.Reset();
 					}
-					if(match != null)
+					if(match != null) // TODO: this sometimes gets stuck when an exception occurs in match.Save()
 					{
-						match.RunMatch();
-						match.SaveToTXT("logs\\" + match.name);
-						//match.SaveToFile("logs\\" + match.name);
-						match.white.AddScore(match.ScoreWhite);
-						match.black.AddScore(match.ScoreBlack);
-						lock(scheduleLock)
-							if(++matchesCompleted == matchesScheduled)
-								scheduleDone.Set();
+						try
+						{
+							match.RunMatch();
+							match.white.AddScore(match.ScoreWhite);
+							match.black.AddScore(match.ScoreBlack);
+							match.Save();
+						}
+						finally
+						{
+							lock(scheduleLock)
+								if(++matchesCompleted == matchesScheduled)
+									scheduleDone.Set();
+						}
 					}
 					else
 						matchesAvailable.WaitOne();
@@ -92,9 +98,9 @@ namespace FlippoIO
 				catch(ThreadAbortException e) { break; }
 				catch(Exception e)
 				{
-					Debug.WriteLine("Exception occured in scheduler thread:");
-					Debug.WriteLine(e.Message);
-					Debug.WriteLine(e.StackTrace);
+					Debug.WriteLine("Exception occured in scheduler thread:", true);
+					Debug.WriteLine(e.Message, true);
+					Debug.WriteLine(e.StackTrace, true);
 					break;
 				}
 			}

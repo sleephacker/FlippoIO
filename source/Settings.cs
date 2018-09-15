@@ -9,12 +9,16 @@ namespace FlippoIO
 		public static bool AsyncRead = true;
 		public static bool KillPrograms = true;
 		public static bool NameMatchByPlayers = true;
+		public static bool SavePlayerLogs = true;
+		public static bool SaveMatchAsFile = true;
+		public static bool SaveMatchAsTXT = false;
 		public static int TimeLimit = 5000;
 		public static int ReadTimeMargin = 200;
 		public static int MillisecondsBeforeKill = 0;
 		public static int ThreadCount = Environment.ProcessorCount;
 		public static String JavaCmd = "java";
 		public static String PythonCmd = "py";
+		public static String JavaScriptCmd = "Cscript";
 		public static char WhiteChar = 'X';
 		public static char BlackChar = 'O';
 		public static char EmptyChar = '.';
@@ -42,6 +46,15 @@ namespace FlippoIO
 					case "NameMatchByPlayers":
 						NameMatchByPlayers = bool.Parse(args[1]);
 						break;
+					case "SavePlayerLogs":
+						SavePlayerLogs = bool.Parse(args[1]);
+						break;
+					case "SaveMatchAsFile":
+						SaveMatchAsFile = bool.Parse(args[1]);
+						break;
+					case "SaveMatchAsTXT":
+						SaveMatchAsTXT = bool.Parse(args[1]);
+						break;
 					case "TimeLimit":
 						TimeLimit = int.Parse(args[1]);
 						break;
@@ -59,6 +72,9 @@ namespace FlippoIO
 						break;
 					case "PythonCmd":
 						PythonCmd = args[1];
+						break;
+					case "JavaScriptCmd":
+						JavaScriptCmd = args[1];
 						break;
 					case "WhiteChar":
 						WhiteChar = char.Parse(args[1]);

@@ -1,4 +1,3 @@
-
 # List of FlippoIO Settings
 
 FlippoIO allows various settings to be changed. All settings below are strongly typed, and are parsed using `type.parse()` in C#, where `type` is the type specified between parentheses.
@@ -21,7 +20,19 @@ Indicates whether or not to kill player processes after sending `Quit` to their 
 
 ## `NameMatchByPlayers (bool)`
 
-Indicates whether or not to name matches by the names of the white and black player followed by a number. If set to false, matches will be named using just a number. Set to `true` by default.
+Indicates whether or not to name matches by the names of the white and black player followed by a number. If set to `false`, matches will be named using just a number. Set to `true` by default.
+
+## `SavePlayerLogs (bool)`
+
+Indicates whether or not to save players' Standard Error output. Set to `true` by default.
+
+## `SaveMatchAsFile (bool)`
+
+Indicates whether or not to save matches in the file format used by the [match viewer](INSERT_LINK_HERE). Matches saved in this format won't have an extension. Set to `true` by default.
+
+## `SaveMatchAsTXT (bool)`
+
+Indicates whether or not to save matches in a human-readable format to `.txt` files. Set to `false` by default.
 
 ## `TimeLimit (int)`
 
@@ -41,7 +52,7 @@ Specifies the number of matches to execute concurrently. Set to `Environment.Pro
 
 ## `JavaCmd (String)`
 
-Can be used to specify a replacement for the java command. Files with the .jar extension are started using the following command:
+Can be used to specify a replacement for the `java` command. Files with the `.jar` extension are started using the following command:
 ```
 <JavaCmd> -jar path\to\file.jar
 ```
@@ -49,11 +60,19 @@ Set to `java` by default.
 
 ## `PythonCmd (String)`
 
-Can be used to specify a replacement for the py command. Files with the .py extension are started using the following command:
+Can be used to specify a replacement for the `py` command. Files with the `.py` extension are started using the following command:
 ```
 <PythonCmd> path\to\file.py
 ```
 Set to `py` by default.
+
+## `JavaScriptCmd (String)`
+
+Can be used to specify a replacement for the `Cscript` command. Files with the `.js` extension are started using the following command:
+```
+<JavaScriptCmd> -nologo path\to\file.js
+```
+Set to `Cscript` by default.
 
 ## `WhiteChar (char)`
 

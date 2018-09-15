@@ -7,7 +7,7 @@ Example usage (sets time limit to 10 seconds):
 set TimeLimit 10000
 ```
 
-For a full list of settings, see: https://github.com/sleephacker/FlippoIO/blob/master/manual/Settings.md.
+See the full list of settings [here](https://github.com/sleephacker/FlippoIO/blob/master/manual/Settings.md).
 
 Note that changing the settings requires FlippoIO to wait for all scheduled matches to complete and to abort all threads that were used during those matches. This process can take a lot of time depending of various settings. As a rule of thumb, the number of threads used is usually equal to `ThreadCount * (AsyncRead ? 4 : 3)`. These threads can only become active once the first match or the first match since the last change of settings is started. It is therefore recommended to change all desired settings before starting any matches.
 
@@ -16,9 +16,9 @@ This command takes two arguments, the name of a player and the path to its execu
 
 Example usage:
 ```
-player “Player One” C:\folder\player.exe
-player “Player Two” player.py
-player player3 “D:\folder that contains my player\java player.jar”
+player "Player One" C:\folder\player.exe
+player "Player Two" player.py
+player player3 "D:\folder that contains my player\java player.jar"
 ```
 
 ## `alias`

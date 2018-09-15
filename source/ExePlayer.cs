@@ -43,6 +43,7 @@ namespace FlippoIO
 		private EventWaitHandle outputDone = new EventWaitHandle(false, EventResetMode.ManualReset);
 		private String stdError;
 		public String PlayerLog => stdError;
+		public double Time => timer.Elapsed.TotalMilliseconds;
 
 		public ExePlayerInstance(ExePlayer player, Match match)
 		{
@@ -57,6 +58,11 @@ namespace FlippoIO
 			{
 				cmd = Settings.PythonCmd;
 				args = player.path;
+			}
+			else if(player.path.EndsWith(".js"))
+			{
+				cmd = Settings.JavaScriptCmd;
+				args = "-nologo " + player.path;
 			}
 			else
 			{
