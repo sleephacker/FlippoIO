@@ -28,7 +28,7 @@ Indicates whether or not to save players' Standard Error output. Set to `true` b
 
 ## `SaveMatchAsFile (bool)`
 
-Indicates whether or not to save matches in the file format used by the [match viewer](INSERT_LINK_HERE). Matches saved in this format won't have an extension. Set to `true` by default.
+Indicates whether or not to save matches in the file format used by the [match viewer](https://github.com/sleephacker/FlippoIO/tree/master/match%20viewer). Matches saved in this format won't have an extension. Set to `true` by default.
 
 ## `SaveMatchAsTXT (bool)`
 
