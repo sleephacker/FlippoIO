@@ -32,7 +32,7 @@ alias 3 player_3
 ```
 
 ## `score`
-Can be used to create and display scoreboards. This command takes one argument, which can either be display or clear. If display is passed as the argument, a ranking of all players and their scores so far will be displayed. If clear is passed as the argument, the score of every player will be reset to zero.
+Can be used to create and display scoreboards. This command takes at least one argument, which can either be `display`, `save` or `clear`. If `display` is passed as the argument, a ranking of all players and their scores so far will be displayed. If `save` is passed, the scoreboard will be saved in CSV format to the file specified in the second argument. If `clear` is passed as the argument, the score of every player will be reset to zero.
 
 ## `match`
 This command can be used to schedule a match between two players, and takes the names or aliases of those players as its two arguments. The first argument specifies the white player, and the second specifies the black player.
@@ -76,3 +76,6 @@ include players.txt
 ```
 
 Note that there are no checks in place to prevent an infinite loop of file inclusion, so have fun!
+
+## `exit`
+Waits for all scheduled matches to complete and exits FlippoIO without asking to press ENTER.
