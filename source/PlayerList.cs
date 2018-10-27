@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace FlippoIO
 {
@@ -57,8 +58,8 @@ namespace FlippoIO
 		public static void DisplayScoreBoard()
 		{
 			Scheduler.WaitForCompletion();
-
 			players.Sort((Player x, Player y) => y.Score - x.Score);
+
 			int maxLength = 0;
 			foreach(Player p in players)
 				if(p.GetName().Length > maxLength)
@@ -73,6 +74,17 @@ namespace FlippoIO
 				line += " | " + p.Score;
 				Console.WriteLine(line);
 			}
+		}
+
+		public static void SaveScoreBoard(String filename)
+		{
+			Scheduler.WaitForCompletion();
+			players.Sort((Player x, Player y) => y.Score - x.Score);
+
+			File.Delete(filename);
+			using(StreamWriter file = new StreamWriter(File.OpenWrite(filename)))
+				foreach(Player p in players)
+					file.WriteLine(p.GetName() + "," + p.Score);
 		}
 
 		public static void ClearScoreBoard()

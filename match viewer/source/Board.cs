@@ -42,7 +42,7 @@ namespace FlippoMatchViewer
 				for(int y = 0; y < 8; y++)
 					if(tiles[x, y].occupied)
 					{
-						Point center = new Point(x * unit + 0.5 * unit, y * unit + 0.5 * unit);
+						Point center = new Point(y * unit + 0.5 * unit, x * unit + 0.5 * unit);
 						double radius = (0.8 * unit) / 2;
 						context.DrawEllipse(tiles[x, y].white ? Brushes.White : Brushes.Black, gray, center, radius, radius);
 					}

@@ -30,6 +30,7 @@ namespace FlippoIO
 			new Command { keyword = "score", function = CmdScore },
 			new Command { keyword = "repeat", function = CmdRepeat },
 			new Command { keyword = "include", function = CmdInclude },
+			new Command { keyword = "exit", function = CmdExit },
 		};
 
 		public static readonly RepCommand[] repList = new RepCommand[]
@@ -151,15 +152,20 @@ namespace FlippoIO
 
 		public static void CmdScore(String[] args)
 		{
-			if(args.Length != 1) throw new Exception("Wrong number of arguments. Expected one argument.");
-			args = args;
+			if(args.Length < 1) throw new Exception("Wrong number of arguments. Expected at least one argument.");
 			switch(args[0])
 			{
 				case "display":
+					if(args.Length != 1) throw new Exception("Wrong number of arguments. Expected no additional arguments after 'display'.");
 					PlayerList.DisplayScoreBoard();
 					break;
 				case "clear":
+					if(args.Length != 1) throw new Exception("Wrong number of arguments. Expected no additional arguments after 'clear'.");
 					PlayerList.ClearScoreBoard();
+					break;
+				case "save":
+					if(args.Length != 2) throw new Exception("Wrong number of arguments. Expected one additional arguments after 'save'.");
+					PlayerList.SaveScoreBoard(args[1]);
 					break;
 				default:
 					throw new Exception("Invalid argument: " + args[0]);
@@ -191,6 +197,13 @@ namespace FlippoIO
 				Debug.WriteLine(e.Message, true);
 				Debug.WriteLine(e.StackTrace, true);
 			}
+		}
+
+		public static void CmdExit(String[] args)
+		{
+			if(args.Length != 0) throw new Exception("Wrong number of arguments. No arguments expected.");
+			Scheduler.WaitForCompletion();
+			Environment.Exit(0);
 		}
 
 		public static void CmdInclude(String[] args)
