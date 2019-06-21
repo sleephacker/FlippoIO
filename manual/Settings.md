@@ -2,7 +2,7 @@
 
 FlippoIO allows various settings to be changed. All settings below are strongly typed, and are parsed using `type.parse()` in C#, where `type` is the type specified between parentheses.
 
-## `LogDebufInfo (bool)`
+## `LogDebugInfo (bool)`
 
 Indicates whether or not to display debugging info. Set to `false` by default.
 
